@@ -1,7 +1,7 @@
 # EFKAN: A KAN-Integrated Neural Operator For Efficient Magnetotelluric Forward Modeling
 ## Introduction
 ```
-This is an offical implementation of the Magnetotelluric Forward Modeling using the EFKAN as presented in the submitted papre: EFKAN: A KAN-Integrated Neural Operator For Efficient Magnetotelluric Forward Modeling. The source will be published once this paper be accepted.
+This is an offical implementation of the Magnetotelluric Forward Modeling using the EFKAN as presented in the submitted papre: EFKAN: A KAN-Integrated Neural Operator For Efficient Magnetotelluric Forward Modeling. The source code will be published once this paper be accepted.
 ```
 ## Abstract
 ```
