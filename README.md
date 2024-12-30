@@ -1,4 +1,5 @@
 ## EFKAN: A KAN-Integrated Neural Operator For Efficient Magnetotelluric Forward Modeling
+![替代文本](./eval/figs/EFKAN.png "可选的标题")
 
 ### Requirements
 - PyTorch >=1.8.0
