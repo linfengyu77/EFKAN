@@ -1,7 +1,7 @@
 """
 predict apparent resistivity and phase
 
-usage: nohup python efno_2d.py 'random_smooth_mlpkan_layer6_super' > smooth_mlpkan_layer6_super.out 2>&1 &
+usage: nohup python efno_mlpkan.py 'random_smooth_mlpkan_layer6_super' > smooth_mlpkan_layer6_super.out 2>&1 &
 """
 
 import os
