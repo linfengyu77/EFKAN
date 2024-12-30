@@ -1,9 +1,22 @@
-# EFKAN: A KAN-Integrated Neural Operator For Efficient Magnetotelluric Forward Modeling
-## Introduction
-```
-This is an offical implementation of the Magnetotelluric Forward Modeling using the EFKAN as presented in the submitted papre: EFKAN: A KAN-Integrated Neural Operator For Efficient Magnetotelluric Forward Modeling. The source code will be published once this paper be accepted.
-```
-## Abstract
-```
-Magnetotelluric (MT) forward modeling is fundamental for improving the accuracy and efficiency of MT inversion. Neural operators (NOs) have been effectively used for rapid MT forward modeling, demonstrating their promising performance in solving the MT forward modeling-related partial differential equations (PDEs). Particularly, they can obtain the electromagnetic field at arbitrary locations and frequencies. In these NOs, the projection layers have been dominated by multi-layer perceptrons (MLPs), which may potentially reduce the accuracy of solution due to they usually suffer from the disadvantages of MLPs, such as lack of interpretability, overfitting, and so on. Therefore, to improve the accuracy of MT forward modeling with NOs and explore the potential alternatives to MLPs, we propose a novel neural operator by extending the Fourier neural operator (FNO) with Kolmogorov-Arnold network (EFKAN). Within the EFKAN framework, the FNO serves as the branch network to calculate the apparent resistivity and phase from the resistivity model in the frequency domain. Meanwhile, the KAN acts as the trunk network to project the resistivity and phase, determined by the FNO, to the desired locations and frequencies. Experimental results demonstrate that the proposed method not only achieves higher accuracy in obtaining apparent resistivity and phase compared to the NO equipped with MLPs at the desired frequencies and locations but also outperforms traditional numerical computational methods in terms of speed.
-```
+## EFKAN: A KAN-Integrated Neural Operator For Efficient Magnetotelluric Forward Modeling
+
+### Requirements
+- PyTorch >=1.8.0
+- torchinfo
+- yaml
+- numpy
+- scipy
+- ray
+
+### files
+
+- run: containing excutable python files
+    - `efno_field_2d.py` is the EFNO for predicting electirc and magnetic field
+    - `efno_2d.py` is the EFNO for predicting apparent resistivity and phase
+    - `fourier_2d.py` is the Fourier Neural Operator([Li et al., 2021](https://arxiv.org/abs/2010.08895))
+    - `cofigure.yml` is the configuration for `efno_2d.py`
+    - `cofigure.yml` is the configuration for `efno__field2d.py`
+- scripts: some auxiliary python fiels
+- model: trained model file
+- Log: log file
+- temp: if stop early, you can file model file here.
