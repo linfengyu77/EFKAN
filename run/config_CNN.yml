@@ -1,0 +1,28 @@
+E_best:
+  train_file: ../../Data/data/train_field_64_z0.mat
+  test_file : ../../Data/data/test_field_64_z0.mat
+  save_mode : state_dict
+  cuda: 1
+  layer_sizes: [2,128,128,128]
+  act_func: tanh
+  init_func: xavier_uniform
+  blocks: [12,18,12]
+  growth_rate: 16
+  init_features: 96
+  drop_rate: 0
+  upsample: nearest
+  ntrain: 15000
+  ntest: 3000
+  imsize: 64
+  epochs: 1000
+  step_size: 100
+  thre_epochs: 700
+  lr: 0.001
+  gamma: 0.5
+  weight_decay: 0.0001
+  batch_size: 50
+  patience : 10
+  save_step: 10
+  seed: 1
+  lr_div: 2.0 
+  lr_pct: 0.3

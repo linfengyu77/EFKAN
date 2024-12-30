@@ -1,0 +1,61 @@
+random_smooth_efno_layer6_smalldata:
+  name: random_smooth_efno_layer6_smalldata # or add _normalization to test normalization in freq
+  TRAIN_PATH: ../data/train_field_64_z0.mat
+  TEST_PATH: ../data/test_random_block.mat #test_field_64_z0.mat #random_block_fre1.1.mat  # 
+  save_mode: state_dict # None means saving as .pt file (all model); or state_dict for .pkl file(only parameters of model)
+  patience: 10 # if there is {patience} epoch that val_error is larger, early stop,
+  print_model_flag: True # print model information or not
+  cuda_id: 1 # gpu ids, e.g. 0,1,2,3
+  n_out: 4 # rhoxy,phsxy,rhoyx,phsyx
+  thre_epoch: 60 # condiser early stop after {thre_epoch} epochs
+  s_train: [64,64,64,64] # resolution in (x,y) direction
+  r_train: [1,1,1,1] # Interval sampling
+  s_test: [64,64,64,64] # resolution in (x,y) direction
+  r_test: [1,1,1,1] # Interval sampling
+  layer_sizes: [2,128,128,128] # layer of fnn
+  layer_num: 6 # number of fno layer
+  last_size: 128 # size of last layer
+  modes: 18  # cutoff modes
+  width: 32  # width for Linear at first layer
+  act_fno : gelu # activation of fno layer
+  act_func: tanh
+  init_func: xavier_uniform
+  ntrain: 5000 # samples of training
+  ntest: 100   # samples of test 3000 # 100 for different frequencies
+  batch_size: 50
+  learning_rate: 0.001
+  epochs: 200
+  save_step: 10 # save model each steps
+  step_size: 50 # step size in scheduler
+  gamma: 0.5
+
+random_smooth_mlpkan_layer6_smalldata:
+  name: random_smooth_mlpkan_layer6_smalldata # or add _normalization to test normalization in freq
+  TRAIN_PATH: ../data/train_field_64_z0.mat
+  TEST_PATH: ../data/test_random_block.mat #test_field_64_z0.mat #random_block_fre1.1.mat  #test_random_block.mat
+  save_mode: state_dict # None means saving as .pt file (all model); or state_dict for .pkl file(only parameters of model)
+  patience: 10 # if there is {patience} epoch that val_error is larger, early stop,
+  print_model_flag: True # print model information or not
+  cuda_id: 2 # gpu ids, e.g. 0,1,2,3
+  n_out: 4 # rhoxy,phsxy,rhoyx,phsyx
+  thre_epoch: 60 # condiser early stop after {thre_epoch} epochs
+  s_train: [64,64,64,64] # resolution in (x,y) direction
+  r_train: [1,1,1,1] # Interval sampling
+  s_test: [64,64,64,64] # resolution in (x,y) direction
+  r_test: [1,1,1,1] # Interval sampling
+  layer_sizes: [2,128,128,128] # layer of fnn
+  layer_num: 6 # number of fno layer
+  last_size: 128 # size of last layer
+  modes: 18  # cutoff modes
+  width: 32  # width for Linear at first layer
+  act_fno : gelu # activation of fno layer
+  act_func: silu
+  init_func: xavier_uniform
+  ntrain: 5000 # samples of training
+  ntest: 100   # samples of test 100  # 100 for different frequencies
+  batch_size: 50
+  learning_rate: 0.001
+  epochs: 200
+  save_step: 10 # save model each steps
+  step_size: 50 # step size in scheduler
+  gamma: 0.5

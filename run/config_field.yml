@@ -1,0 +1,31 @@
+
+field_best:
+  name: field_best # or add _normalization to test normalization in freq
+  TRAIN_PATH: ../../Data/data/train_field_64_z0.mat
+  TEST_PATH: ../../Data/data/test_field_64_z0.mat
+  save_mode: state_dict # None means saving as .pt file (all model); or state_dict for .pkl file(only parameters of model)
+  patience: 10 # if there is {patience} epoch that val_error is larger, early stop,
+  print_model_flag: False
+  cuda_id: 6 # gpu ids, e.g. 0,1,2,3
+  n_out: 3 # rhoxy,phsxy,rhoyx,phsyx
+  thre_epoch: 300 # condiser early stop after {thre_epoch} epochs
+  s_train: [64,64,64,64] # resolution in (x,y) direction
+  r_train: [1,1,1,1] # Interval sampling
+  s_test: [64,64,64,64] # resolution in (x,y) direction
+  r_test: [1,1,1,1] # Interval sampling
+  layer_sizes: [2,128,128,128] # layer of fnn
+  layer_num: 4 # number of fno layer
+  last_size: 128 # size of last layer
+  modes: 18  # cutoff modes
+  width: 32  # width for Linear at first layer
+  act_fno : gelu # activation of fno layer
+  act_func: tanh
+  init_func: xavier_uniform
+  ntrain: 15000 # samples of training
+  ntest: 3000   # samples of test
+  batch_size: 50
+  learning_rate: 0.001
+  epochs: 500
+  save_step: 10 # save model each steps
+  step_size: 50 # step size in scheduler
+  gamma: 0.5
