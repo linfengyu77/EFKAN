@@ -20,3 +20,19 @@
 - model: trained model file
 - Log: log file
 - temp: if stop early, you can file model file here.
+
+### Data
+
+One can generate training and testing samples by using python files in  `data_gen`.
+
+- `gaussian_random_fields.py` using gaussian random filed with different length scale. 
+
+- `MT2D_secondary.py` is compute 2D MT response by using secondary filed method (SFM), Parallel version
+
+- `model_random.py` generate conductivity structures and compute the apparent resistivity and phase by using finite difference method.
+
+### Usage
+```shell
+cd ./run
+python efno_2d.py random_best
+```
