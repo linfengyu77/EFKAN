@@ -17,3 +17,5 @@
 - `run/fourier_2d.py`: the Fourier Neural Operator([Li et al., 2021](https://arxiv.org/abs/2010.08895))
 - `run/cofigure.yml`: configurations for EFNO and EFKAN training.
 - `eval/plot_loss.ipynb`: ploting the training loss curves
+### Data and models
+- The dataset and trained models are shared at https://drive.google.com/drive/folders/1Vpvb0zISzIXIovYQzvXAUA-quskXzAXK
